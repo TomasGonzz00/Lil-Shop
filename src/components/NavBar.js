@@ -2,24 +2,24 @@ import CartWidget from "./CartWidget";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {Link} from "react-router-dom"
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="md" >
                 <Container className="navbar-container">
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav id="navbar">
-                            <Navbar.Brand href="#home" style={{ fontSize: 25 }}>Lil Shop</Navbar.Brand>
+                            <Navbar.Brand><Link className="nav-brand" to="/" >Lil Shop</Link></Navbar.Brand>
                             <Nav className="mx-auto">
-                                <Nav.Link className="mx-2" href="#auriculares">Auriculares</Nav.Link>
-                                <Nav.Link className="mx-2" href="#mouse">Mouse</Nav.Link>
-                                <Nav.Link className="mx-2" href="#teclados">Teclados</Nav.Link>
-                                <Nav.Link className="mx-2" href="#gamepads">Gamepads</Nav.Link>
-                                <Nav.Link className="mx-2" href="#contact">Contacto</Nav.Link>
+                            <Link className="nav-link mx-2" to="/category/auriculares" >Auriculares</Link>
+                            <Link className="nav-link mx-2" to="/category/mouse" >Mouse</Link>
+                            <Link className="nav-link mx-2" to="/category/teclados" >Teclados</Link>
+                            <Link className="nav-link mx-2" to="/category/gamepads" >Gamepads</Link>
                             </Nav>
                             <Nav.Link href="#cart" className="mx-4"><CartWidget /></Nav.Link>
                         </Nav>

@@ -1,43 +1,37 @@
-import { useState } from "react";
-import ItemCount from "./ItemCount";
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import {useParams} from "react-router-dom";
+/* import ItemCount from "./ItemCount"; */
 
-const items = [
-    {
-      id : 1,
-      name : "mouse",
-      description : "mouse gamer con control de sensibilidad y RGB",
-      stock : 5
-    },
-    {
-      id : 2,
-      name : "keyboard",
-      desciption : "Teclado mecanico con iluminacion LED y teclas multimedia",
-      stock : 3
-    }
-  ] 
+import { itemMock } from "../mocks/Item.Mock"
 
 const ItemListContainer = () => {
+  const {category} = useParams();
+  const [products, setProducts] = useState([]);
 
-    const [products, setProducts] = useState([]);
- 
-    const productList = new Promise ((resolve) =>
-        setTimeout(() =>
-            {resolve (items)},3000)
-    );
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => { resolve(itemMock) }, 2000)
+    ).then((data) => {
+      if(category){
+        const categories = data.filter((products) => products.category === category);
+        setProducts(categories) ;
+      }else{
+        setProducts(data);
+      }
+    });
+  }, [category]);
 
-    productList.then(data => setProducts(data));
 
-    return (
-            <div className="greeting">
-                <ItemCount stock={5} initial={1}/>
-                <div>
-                  {products.map((product) => (
-                    <p>{product.name}</p>
-                  ))}
-                </div>
-                
-            </div>
-    );
+  return (
+    <div className="greeting">
+      {/* <ItemCount stock={5} initial={1} /> */}
+      <div>
+        <ItemList products={products} />
+      </div>
+
+    </div>
+  );
 }
 
 export default ItemListContainer;

@@ -1,36 +1,28 @@
 import { useState, useEffect } from "react";
-import ItemCount from "./ItemCount";
+import ItemDetail from "./ItemDetail"
+import {useParams} from "react-router-dom";
+/* import ItemCount from "./ItemCount"; */
 
-const itemMock = [
-    {
-        id: 1,
-        name: "mouse",
-        description: "mouse gamer con control de sensibilidad y RGB",
-        stock: 5
-    },
-    {
-        id: 2,
-        name: "keyboard",
-        desciption: "Teclado mecanico con iluminacion LED y teclas multimedia",
-        stock: 3
-    }
-]
+import { itemMock } from "../mocks/Item.Mock"
 
 const ItemDetailContainer = () => {
-    const [items, setItem] = useState([]);
+  const productId = useParams();
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        new Promise((resolve) =>
-            setTimeout(() => resolve(itemMock), 2000)).then(
-                (data) => setItem(data)
-            );
-    }, []);
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => { resolve(itemMock) }, 2000)
+    ).then((data) => {
+        const product = data.find((element) => element.id ==  productId.id);
+        setProducts(product) ;
+    });
+  }, [productId]);
 
-    if(!item) {
-        return <p>Loading...</p>;
-    }
-
-    return <ItemDetail item={items} />;
+  return (
+      <div>
+        <ItemDetail item={products} />
+      </div>
+  );
 }
 
 export default ItemDetailContainer;
