@@ -9,7 +9,7 @@
     --morning-blue: rgba(123, 158, 135, 1);
     --charcoal: rgb(34, 36, 47);
     --prussian-blue: rgb(88, 99, 214);
-    --def: #96b7c4;
+    --def: #218fbb;
 	--inv: #fff;
 }
 
@@ -165,7 +165,7 @@
 	transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
 	cursor: pointer;
 	user-select: none;
-    font-family: "Playfair Display", serif;
+    font-family: var(--font);
 }
 
 .btn:before,
@@ -218,6 +218,9 @@
 .from-center:hover:after {
 	top: 0;
 	height: 100%;
+}
+.prueba2{
+    color: #0099CC;
 }
 
 

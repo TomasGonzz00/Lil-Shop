@@ -1,9 +1,10 @@
 
 
 const ItemCount = ({stock, initial, onAdd}) => {
+    console.log(stock,initial)
     return (
         <div>
-            <p>{stock} {initial}</p>
+            <p className="prueba2">{stock} {initial}</p>
         </div>
     );
 }

@@ -1,8 +1,7 @@
-
+import ItemCount from './ItemCount';
 import Carousel from 'react-bootstrap/Carousel';
 
 const ItemDetail = ({ item }) => {
-    console.log(item)
     return (
         <div className='item-detail-container'>
             <Carousel className='card-detail-carousel'>
@@ -32,6 +31,7 @@ const ItemDetail = ({ item }) => {
                 <p className='card-title' >{item.name}</p>
                 <p className='card-description'>{item.description}</p>
                 <p className='card-precio' >${item.precio}</p>
+                <ItemCount stock="5" initial="1"  />
             </div>
         </div>
     )
