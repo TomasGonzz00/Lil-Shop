@@ -138,18 +138,17 @@
 }
 .details{
     max-width: 50vw;
+    text-align: center;
 }
 .card-description{
     font-family: var(--font);
     padding-top: 10px;
     font-size: 20px;
     color: azure;
-    text-align: center;
 }
 .item-detail{
     display: block;
     text-decoration: none;
-    text-align: center;
     font-family: var(--font);
     color: azure !important;
     font-size: medium;
@@ -221,6 +220,10 @@
 }
 .prueba2{
     color: #0099CC;
+}
+.item-count{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 
