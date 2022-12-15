@@ -1,12 +1,14 @@
 
 import Card from 'react-bootstrap/Card';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({ product }) => {
+    const navigate = useNavigate();
     console.log(product);
     const itemUrl = "/item/"+ product.id;
     return (
-        <div>
+        <div onClick={() => navigate(itemUrl)}>
             <Card>
                 <Card.Body>
                     <Card.Img variant="top" src={product.urlImg} />

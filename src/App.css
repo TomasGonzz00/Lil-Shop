@@ -92,6 +92,15 @@
     color: azure;
     text-align: center;
 }
+.card-stock{
+    font-family: var(--font);
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 20px;
+    color: azure;
+    text-align: center;
+    width: 50%;
+}
 
 .card {
     background: transparent !important;
@@ -119,8 +128,10 @@
 }
 .item-detail-container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    padding: 0px 30px;
 }
 .card-detail-img{
     width: 40vw;
@@ -132,12 +143,10 @@
 }
 
 .card-detail-carousel{
-    width: 50vw;
-    height: 100vh;
-
+width: 50%;    
 }
 .details{
-    max-width: 50vw;
+    width: 50%;
     text-align: center;
 }
 .card-description{
@@ -157,7 +166,7 @@
 }
 .btn {
 	position: relative;
-	padding: 1.4rem 4.2rem;
+	padding: 1.4rem 4rem;
 	font-size: 15px;
 	color: var(--inv);
 	text-transform: uppercase;
@@ -165,6 +174,7 @@
 	cursor: pointer;
 	user-select: none;
     font-family: var(--font);
+    font-weight: 700;
 }
 
 .btn:before,
@@ -224,7 +234,45 @@
 .item-count{
     display: flex;
     justify-content: space-evenly;
+    align-items: baseline;
+    flex-grow: 1;
+}
+.item-count-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;   
+    font-family: var(--font);
+    font-weight: 700;
+    flex-wrap: wrap;
 }
 
+.btn-add-cart {
+    flex-grow: 1;
+    border-color: var(--blue-green);
+    padding: 0.6em ;
+    cursor: pointer;
+    max-width: 50%;
+    font-size: 1em;
+    color: var(--blue-green);
+    background: linear-gradient(45deg, transparent 50%, var(--blue-green) 50%);
+    background-position: 25%;
+    background-size: 400%;
+    -webkit-transition: background 500ms ease-in-out, color 500ms ease-in-out;
+    transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  }
+  
+  .btn-add-cart:hover {
+    color: #ffffff;
+    background-position: 100%;
+}
+
+@media  screen and (max-width:800px) {
+    .card-detail-carousel{
+        width: 100%;    
+        }
+        .details{
+            width: 100%;
+        }
+}
 
 
