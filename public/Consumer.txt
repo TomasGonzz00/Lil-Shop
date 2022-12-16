@@ -1,0 +1,47 @@
+Context: Se utiliza para pasar props de componentes padre a cualq hijo de su rama
+
+    Context Provider
+        Primero necesitamos crear el contexto, por lo cual importaremos createContext from react, y pondremos la linea:
+
+                            export const context = createContext("valor por defecto");
+        
+        Pondremos el provider, que es donde queremos que se injecte el contexto como padre del componente
+
+            <Context.Provider value={'Por defecto'}>
+                <Componente A />
+            </Context.Provider>
+
+    Context Consumer 
+        Primero importamos el contexto creado y pasado por provider y luego escribimos el codigo:
+
+            <Component A/>
+            <Context.Consumer>
+                {(value) => {
+                        return(
+                            <h1>{value}</h1>    
+                        )
+                    }
+                }
+            <Componente B/>
+        
+        Nota: Al utilizar el context consumer en vez del useContext esto nos permite hacer que en caso de que el value cambie del
+        Provider solo se renderize de nuevo el Consumer y no el componente A y B.
+
+            const value = useContext(context);
+
+    Context Dinamico
+        Creamos un functional component que reciba como children el componente que se quiere proveer
+
+                    export const CartContextProvider = ({children}) => {
+
+                        [prueba, setPrueba] = useState('');
+                        const CartContext = createContext([])
+                        return(
+                            <CartContext.Provider value={{prueba, setPrueba}}>
+                                {children}
+                            </CartContext.Provider>
+                            );
+                    }
+
+
+

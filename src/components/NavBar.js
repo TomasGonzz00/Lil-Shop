@@ -2,11 +2,10 @@ import CartWidget from "./CartWidget";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = () => {
-    const navigate = useNavigate();
     return (
         <div>
             <Navbar collapseOnSelect expand="md" >

@@ -6,11 +6,13 @@ import { CartContextProvider } from './context/CartContext';
 function App() {
 
   return (
-    <CartContextProvider>
+    
       <Layout>
-        <ItemListContainer />
+        <CartContextProvider>
+          <ItemListContainer />
+        </CartContextProvider>
       </Layout>
-    </CartContextProvider>
+    
   );
 };
 

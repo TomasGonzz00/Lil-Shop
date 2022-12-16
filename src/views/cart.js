@@ -1,6 +1,4 @@
 import { Layout } from "../components/Layout";
-import { useNavigate } from "react-router-dom";
-
 
 const Cart = () => {
     return (
