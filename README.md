@@ -19,5 +19,4 @@ En caso de querer ver en mas detalle un producto, se puede hacer "click" sobre Ã
 
 - **React Boostrap**
 - **FontAwesome**
-- **gh-pages**
 
