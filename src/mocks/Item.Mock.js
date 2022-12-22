@@ -16,7 +16,7 @@ export const itemMock = [
         name: "REDRAGON K585 DITI RGB ONE-HANDED",
         description: "La portabilidad de este teclado te permite llevarlo cómodamente a dondequiera que vayas. Es perfecto para las juntadas con amigos donde tenés que llevar lo escenciar para jugar cómodo y con tecnología de primera calidad.",
         category: "teclados",
-        stock: 3,
+        stock: 0,
         precio : 6490,
         urlImg:"https://www.venex.com.ar/products_images/1655237090_k585_pnghq_1.png",
         urlImg2: "https://www.venex.com.ar/products_images/1565115518_redragon_k585_3_450x450.png",

@@ -87,7 +87,6 @@
 .card-precio{
     font-family: var(--font);
     font-weight: 700;
-    padding-top: 20px;
     font-size: 20px;
     color: azure;
     text-align: center;
@@ -95,11 +94,12 @@
 .card-stock{
     font-family: var(--font);
     font-weight: 700;
-    padding-top: 20px;
+    padding: 5px;
     font-size: 20px;
     color: azure;
     text-align: center;
-    width: 50%;
+    width: 100%;
+    text-align: center;
 }
 
 .card {
@@ -265,6 +265,111 @@ width: 50%;
     color: #ffffff;
     background-position: 100%;
 }
+.cart-item-container{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cart-item{
+    display: flex;
+    border: 2px solid var(--blue-green);
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+    width: 60vw;
+}
+.cart-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-top: 10px;
+}
+.cart-img{
+    border-right: 2px solid var(--blue-green);
+}
+.cart-btn{
+    display:flex;
+    justify-items: center;
+}
+.cart-btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-cart-remove{
+    background: transparent;
+    text-decoration: none;
+    border: none;
+    color: #0099CC;
+    padding-right: 20px;
+}
+.cart{
+    font-family: var(--font);
+    font-weight: 700; 
+    text-align: center;
+}
+.cart-title{
+    min-width: 50%;
+    color: var(--blue-green);
+}
+.cart-precio{
+    min-width: 25%;
+    color: azure;
+}
+.cart-cant{
+    min-width: 20%;
+    color: azure;
+}
+.widget-container{
+    display: flex;
+    text-decoration: none;
+}
+.widget-button{
+ text-decoration: none;
+ color: azure;
+ border: none;   
+}
+.form{
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 60vw;
+
+}
+.form__input{
+    color: white;
+    width: 100%;
+    padding: 6px;
+    margin: 9px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid azure;
+    }
+    .form__input:focus{
+    background: linear-gradient(to bottom,transparent, #333);
+    outline: none;
+    border-bottom: 3px solid var(--blue-green);
+    }
+.checkout-title{
+    color: azure;
+    font-family: var(--font);
+}
+.comprobante{
+    color: azure;
+    font-weight: 700;
+    font-size: larger;
+}
+
 
 @media  screen and (max-width:800px) {
     .card-detail-carousel{

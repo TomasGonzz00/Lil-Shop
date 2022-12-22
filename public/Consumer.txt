@@ -27,7 +27,7 @@ Context: Se utiliza para pasar props de componentes padre a cualq hijo de su ram
         Nota: Al utilizar el context consumer en vez del useContext esto nos permite hacer que en caso de que el value cambie del
         Provider solo se renderize de nuevo el Consumer y no el componente A y B.
 
-            const value = useContext(context);
+            const {value, otraCosa, algoMas} = useContext(context);
 
     Context Dinamico
         Creamos un functional component que reciba como children el componente que se quiere proveer
@@ -43,5 +43,21 @@ Context: Se utiliza para pasar props de componentes padre a cualq hijo de su ram
                             );
                     }
 
+        Para consumirlo:
+
+                    <Component A/>
+                    <Context.Consumer>
+                        {({prueba, setPrueba}) => {
+                                return(
+                                    <h1>{value}</h1>    
+                                )
+                            }
+                        }
+                    <Componente B/>
+
+Ternarios
+    No se pueden utilizar If en jsx, debido a q' estos no retornan nada. La diferencia que hay entre los Ifs y los Ternarios es que en el Ifs por mas que
+la condicion no se cumple, se gastan recursos en crear los 2 elementos, en cambio en el ternario primero se gastan recursos en resolver la condicion y 
+luego se elige cual elemento crear.
 
 

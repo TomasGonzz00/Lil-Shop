@@ -1,31 +1,39 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
-/* import ItemCount from "./ItemCount"; */
 
-import { itemMock } from "../mocks/Item.Mock"
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
 
 const ItemListContainer = () => {
   const {category} = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => { resolve(itemMock) }, 2000)
-    ).then((data) => {
-      if(category){
-        const categories = data.filter((products) => products.category === category);
-        setProducts(categories) ;
-      }else{
-        setProducts(data);
-      }
-    });
-  }, [category]);
+    const db = getFirestore();   
+    const itemCollection = collection(db,'items');
 
+    if(category){
+      const q = query(itemCollection, where("category",'==',category));
+      getDocs(q).then((snapshot) => {
+        const products2 = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setProducts(products2);
+      }).catch(err => console.log(err))
+    } else {
+      getDocs(itemCollection).then((snapshot) => {
+        const products2 = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setProducts(products2);
+      }).catch(err => console.log(err))
+    }
+  },[category])
 
   return (
     <div className="greeting">
-      {/* <ItemCount stock={5} initial={1} /> */}
       <div>
         <ItemList products={products} />
       </div>
