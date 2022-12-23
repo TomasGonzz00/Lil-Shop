@@ -1,5 +1,4 @@
-# Lil Shop 
-[Pagina de la tienda](https://github.com/facebook/create-react-app).
+# Lil Shop
 
 Es una tienda de venta de perifericos, en su "Home" muestra todos los productos que tenemos disponibles. Otra opción es filtrar por categoria en las ya fijadas en la barra de navegacion. 
 En caso de querer ver en mas detalle un producto, se puede hacer "click" sobre él o "VER DETALLES" y nos lleva a las especificaciones del producto junto con más imagenes para inspeccionar mejor lo que queremos comprar.
