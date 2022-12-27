@@ -430,10 +430,24 @@
     .card-detail-img{
         width: 60vw;
     }
-    .cart-img{
-        width:60px !important;
+    .cart-info {
+        align-items: baseline;
+        flex-direction: row;
+        width: 100%;
+        font-size: 10px;
+        padding-top: 10px;
     }
-    .card-info{
-        margin-top: 0px;
+    .cart-img {
+        padding: 5px;
+    }
+    .cart-title {
+        min-width: 40%;
+    }
+    .btn-cart-remove {
+       
+        padding-top: 10px;
+    }
+    .form {
+        width: 85vw;
     }
 }
