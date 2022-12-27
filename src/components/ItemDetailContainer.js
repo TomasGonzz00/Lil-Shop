@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         alert("la Id ingresada no es correcta, por favor revise nuestro catalogo para buscar lo que desea comprar")
       }
     }).catch(err => console.log(err))
-  },[])
+  },)
 
   return (
       <div>
