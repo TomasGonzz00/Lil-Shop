@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const NavBar = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="md" >
+            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container className="navbar-container">
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
