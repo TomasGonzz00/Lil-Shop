@@ -20,7 +20,7 @@ export const CartContextProvider = ({children}) => {
         const isAlreadyAdded = isInCart(item.id);
         if(isAlreadyAdded){
             const modificado = carrito.map((element) => {
-                if(element.id == item.id){
+                if(element.id === item.id){
                     element.count += count;
                 }
                 return element;
@@ -43,7 +43,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     function isInCart(id){
-        const prueba = carrito.find((product) => product.id == id);
+        const prueba = carrito.find((product) => product.id === id);
         return Boolean(prueba);
     }
 
