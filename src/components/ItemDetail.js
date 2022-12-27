@@ -59,7 +59,7 @@ const ItemDetail = ({ item }) => {
                     {stock > 0 ? (<p className='card-precio' >Stock: {stock}</p>) : (null)}
                     <div className='item-count-container'>
                         {stock > 0 ? (<>
-                            {add == false ? (<>
+                            {add === false ? (<>
                                     <ItemCount stock={stock} count={count} onAddCount={onAddCount} />
                                     <button onClick={() => onAddCart()} className="btn-add-cart">Añadir al Carrito</button>
                             </>) : (
