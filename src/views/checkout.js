@@ -21,7 +21,7 @@ const CheckoutView = () => {
         const mail2 = event.target[3].value;
         const telefono = event.target[4].value;
 
-        if (mail == mail2) {
+        if (mail === mail2) {
                 const order = {
                 buyer: {nombre, apellido, mail, telefono},
                 items: carrito,
