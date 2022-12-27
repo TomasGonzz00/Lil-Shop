@@ -427,6 +427,9 @@
     .cart-item{
         width: 100vw;
     }
+    .card-detail-img{
+        width: 60vw;
+    }
     .cart-img{
         width:60px !important;
     }
