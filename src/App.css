@@ -310,9 +310,12 @@
     width: 100%;
     margin-top: 10px;
 }
-
-.cart-img {
+.cart-img-container{
+    height: 80px;
     border-right: 2px solid var(--blue-green);
+}
+.cart-img {
+    object-fit: cover;
 }
 
 .cart-btn {
